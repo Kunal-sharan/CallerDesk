@@ -69,10 +69,9 @@ const Tab=createBottomTabNavigator()
 export default function App() {
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
-      <Dialpad/>
-      {/* <NavigationContainer>
+      <NavigationContainer>
         <AppStack />  
-      </NavigationContainer> */}
+      </NavigationContainer>
     </ApplicationProvider>
   );
 }
