@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import ContactDetails from './ContactDetails'
 
 const Calllogs = () => {
   return (
-    <View>
-      <Text>Calllogs</Text>
-    </View>
+   <ContactDetails/>
   )
 }
 

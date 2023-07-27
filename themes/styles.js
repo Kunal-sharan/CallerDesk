@@ -19,7 +19,7 @@ export const styles=StyleSheet.create({
         elevation: 5,
         borderRadius: 5,
         padding: 16,
-        marginVertical:16
+        marginVertical:8
     },
     inputshadow:{
     shadowColor: '#000',
