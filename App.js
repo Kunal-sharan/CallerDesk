@@ -20,6 +20,9 @@ import { colors } from './themes/vars';
 import { IconHome } from './common/icons/homeicon';
 import Onboarding from './common/components/Onbording/Onboarding';
 import Dialpad from './screens/private/Dialpad';
+import MissedCalls from './screens/private/MissedCalls';
+import Logs from './screens/private/Logs';
+import AnsweredCalls from './screens/private/AnsweredCalls';
 
 
 const AppStack = () => {
@@ -29,6 +32,9 @@ const AppStack = () => {
       <Stack.Screen name="Onboarding" options={{ headerShown: false }} component={Onboarding} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="OTPverify" component={OTPverify} />
+      <Stack.Screen name="Missed Calls" component={MissedCalls}/>
+      <Stack.Screen name='Call Logs' component={Logs}/>
+      <Stack.Screen name="Answered Calls" component={AnsweredCalls}/>
       <Stack.Screen name="Tabs" options={{headerShown:false}} component={HomeTabs}/>
     </Stack.Navigator>
   )

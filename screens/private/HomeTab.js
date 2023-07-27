@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View ,SvgXml} from 'react-native'
+import { StyleSheet, Text, View ,SvgXml, TouchableOpacity} from 'react-native'
 import React from 'react'
 import MySearch from '../../common/components/inputs'
 import MyCard from '../../common/components/layout'
@@ -9,7 +9,7 @@ import { HomeM4 } from '../../common/icons/HomeM4'
 import { HomeM5 } from '../../common/icons/HomeM5'
 import { HomeM6 } from '../../common/icons/HomeM6'
 
-export const Home = () => {
+export const Home = ({navigation}) => {
   return (
     <View style={{justifyContent:"center",alignItems:"center",padding:16,width:"100%",backgroundColor:"rgba(255, 255, 255, 1)",flex:1}}>
       <MySearch/>
@@ -23,15 +23,21 @@ export const Home = () => {
       </View>
       </View>
       <View style={{flexDirection:"row"}}>
+       <TouchableOpacity onPress={()=>{navigation.navigate("Call Logs")}}>
       <MyCard
         title="Total Call"
         icon={HomeM1} 
       />
+      </TouchableOpacity> 
       <MyCard title="Staff Calls" icon={HomeM2}/>
       </View>
       <View style={{flexDirection:"row"}} >
+        <TouchableOpacity onPress={()=>{navigation.navigate("Answered Calls")}}>
         <MyCard title="Answered Calls" icon={HomeM3}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>{navigation.navigate("Missed Calls")}}>
         <MyCard title="Missed Calls" icon={HomeM4}/>
+        </TouchableOpacity>
       </View>
       <View style={{flexDirection:"row"}} >
         <MyCard title="Add Teams" icon={HomeM5}/>
