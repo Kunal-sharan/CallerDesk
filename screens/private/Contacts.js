@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { Layout } from '@ui-kitten/components'
 import MySearch from '../../common/components/inputs'
 import { ActivityIndicator } from 'react-native'
+import { IconContacts } from '../../common/icons/contactsicon'
+import { Phone } from '../../common/icons/Contactdetailsicons/phone'
 const Contacts = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true); // Initialize loading state to true
@@ -37,6 +39,7 @@ const Contacts = () => {
                 <View style={{paddingHorizontal:16}}>
                 <Text >Kunal Sharan</Text>
                 </View>
+                <View style={{position:"absolute",right:"2%"}}><Phone/></View>
               </View>
         </View>
       </View>
@@ -47,12 +50,12 @@ export default Contacts;
 
 const styles = StyleSheet.create({
   ContactCard:{
+    width:"100%",
     flexDirection: "row",
     borderBottomWidth: 1,
     borderBottomColor: "rgba(237, 221, 221, 0.7)",
     padding: 16,
-    alignItems: "center",
-    justifyContent: "flex-start",
+    alignItems: "center"
   },
   contactsImg:{
     backgroundColor: "rgba(86, 242, 124, 1)",

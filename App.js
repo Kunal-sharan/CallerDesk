@@ -23,7 +23,9 @@ import Dialpad from './screens/private/Dialpad';
 import MissedCalls from './screens/private/MissedCalls';
 import Logs from './screens/private/Logs';
 import AnsweredCalls from './screens/private/AnsweredCalls';
-
+import ContactDetails from './screens/private/ContactDetails';
+import { AddContact } from './AddContact';
+import { IconAddContact } from './common/icons/addcontacticon';
 
 const AppStack = () => {
   return (
@@ -35,6 +37,7 @@ const AppStack = () => {
       <Stack.Screen name="Missed Calls" component={MissedCalls}/>
       <Stack.Screen name='Call Logs' component={Logs}/>
       <Stack.Screen name="Answered Calls" component={AnsweredCalls}/>
+      <Stack.Screen name='Add Contacts' component={ContactDetails}/>
       <Stack.Screen name="Tabs" options={{headerShown:false}} component={HomeTabs}/>
     </Stack.Navigator>
   )
@@ -63,7 +66,7 @@ const HomeTabs = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Chat" component={Chat} />
-      <Tab.Screen name="Calllogs" component={Calllogs} />
+      <Tab.Screen name="Calllogs" options={{headerRight:IconAddContact}} component={Calllogs} />
       <Tab.Screen name="Contacts" component={Contacts} />
     </Tab.Navigator>
   );
