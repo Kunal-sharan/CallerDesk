@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { TextInput } from 'react-native'
+import { Input } from '@ui-kitten/components'
+import { SearchIcon } from '../icons/search'
+
 
 const MySearch = () => {
   return (
-    <View style={Searchstyles.inputstyle}>
-    <TextInput placeholder="Search Calls,Calls Logs" />
+    <View>
+    <Input style={Searchstyles.inputstyle} placeholder="Search Calls,Calls Logs" textStyle={Searchstyles.inputText} accessoryLeft={SearchIcon} />
     </View>
   )
 }
@@ -18,8 +21,7 @@ const Searchstyles = StyleSheet.create({
         borderRadius:10,
         borderWidth:1,
         backgroundColor:"rgba(251, 251, 251, 1)",
-        borderColor:"rgba(217, 217, 217, 1)",
-        padding:8
+        borderColor:"rgba(217, 217, 217, 1)"
     },
     inputText:{
         fontSize:12,

@@ -59,7 +59,7 @@ const ContactProfile = () => {
 
 
 
-const ContactDetails = () => {
+const AddContactDetails = () => {
 const [userName,setuserName]=useState("Xyz name")
 const [userEmail,setuserEmail]=useState("xyz123@gmail.com")
 const [userAddress,setuserAddress]=useState("4071 4th Floor,IP Ext 2")
@@ -154,4 +154,4 @@ const [phoneNum,setphoneNum]=useState("999 333 933 9009")
   )
 }
 
-export default ContactDetails
+export default AddContactDetails

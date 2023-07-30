@@ -23,10 +23,20 @@ import Dialpad from './screens/private/Dialpad';
 import MissedCalls from './screens/private/MissedCalls';
 import Logs from './screens/private/Logs';
 import AnsweredCalls from './screens/private/AnsweredCalls';
-import ContactDetails from './screens/private/ContactDetails';
+import AddContactDetails from './screens/private/AddContactDetails';
 import { AddContact } from './AddContact';
 import { IconAddContact } from './common/icons/addcontacticon';
-
+import { NotificationIcon } from './common/icons/notification';
+import ContactsDetails from './screens/private/ContactsDetails';
+const headerRight=()=>{
+  return(
+    <View style={{flexDirection:"row",padding:4}}>
+      <View></View>
+      <View><NotificationIcon/></View>
+      <View style={{marginHorizontal:8}}><IconAddContact/></View>
+    </View>
+  )
+}
 const AppStack = () => {
   return (
     <Stack.Navigator initialRouteName='skipscreen1' 
@@ -37,7 +47,8 @@ const AppStack = () => {
       <Stack.Screen name="Missed Calls" component={MissedCalls}/>
       <Stack.Screen name='Call Logs' component={Logs}/>
       <Stack.Screen name="Answered Calls" component={AnsweredCalls}/>
-      <Stack.Screen name='Add Contacts' component={ContactDetails}/>
+      <Stack.Screen name='Add Contacts' component={AddContactDetails}/>
+      <Stack.Screen name='Contact Details' component={ContactsDetails}/>
       <Stack.Screen name="Tabs" options={{headerShown:false}} component={HomeTabs}/>
     </Stack.Navigator>
   )
@@ -66,7 +77,7 @@ const HomeTabs = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Chat" component={Chat} />
-      <Tab.Screen name="Calllogs" options={{headerRight:IconAddContact}} component={Calllogs} />
+      <Tab.Screen name="Calllogs" options={{headerRight:headerRight}} component={Calllogs} />
       <Tab.Screen name="Contacts" component={Contacts} />
     </Tab.Navigator>
   );
