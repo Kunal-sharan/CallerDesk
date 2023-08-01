@@ -61,7 +61,6 @@ const ContactProfile = () => {
 const ContactsDetails = ({navigation}) => {
   const [userEmail,setuserEmail]=useState("xyz123@gmail.com")
   const [userAddress,setuserAddress]=useState("4071 4th Floor,IP Ext 2")
-  const [userComments,setuserComments]=useState("")
   const [phoneNum,setphoneNum]=useState("999 333 933 9009")
 
   return (
