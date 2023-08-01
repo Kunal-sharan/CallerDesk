@@ -28,6 +28,7 @@ import { AddContact } from './AddContact';
 import { IconAddContact } from './common/icons/addcontacticon';
 import { NotificationIcon } from './common/icons/notification';
 import ContactsDetails from './screens/private/ContactsDetails';
+import EditContact from './screens/private/EditContact';
 const headerRight=()=>{
   return(
     <View style={{flexDirection:"row",padding:4}}>
@@ -48,6 +49,7 @@ const AppStack = () => {
       <Stack.Screen name='Call Logs' component={Logs}/>
       <Stack.Screen name="Answered Calls" component={AnsweredCalls}/>
       <Stack.Screen name='Add Contacts' component={AddContactDetails}/>
+      <Stack.Screen name='Edit Contact' component={EditContact}/>
       <Stack.Screen name='Contact Details' component={ContactsDetails}/>
       <Stack.Screen name="Tabs" options={{headerShown:false}} component={HomeTabs}/>
     </Stack.Navigator>
