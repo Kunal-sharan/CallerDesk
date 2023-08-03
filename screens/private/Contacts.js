@@ -20,7 +20,7 @@ const Contacts = () => {
 
   return (
     <ScrollView style={{ width: "100%" }}>
-      <View style={{ width: "100%" ,padding:16,backgroundColor:"white"}}>
+      <View style={{ width: "100%" ,padding:16,backgroundColor:"white",flex:1}}>
         <MySearch />
         <View>
           {/* {loading ? ( // Use the loading state here to conditionally render the ActivityIndicator

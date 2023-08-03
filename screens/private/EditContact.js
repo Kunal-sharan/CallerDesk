@@ -1,6 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity, View,TouchableWithoutFeedback} from 'react-native'
+import { Text, View,TouchableWithoutFeedback} from 'react-native'
 import React,{useState} from 'react'
-import { useNavigation } from '@react-navigation/native'
 import {Input} from "@ui-kitten/components"
 import { Phone } from '../../common/icons/Contactdetailsicons/phone'
 import { Name } from '../../common/icons/Contactdetailsicons/name'
@@ -15,6 +14,24 @@ const {phoneNum,userAddress,userEmail}=route.params
 const [newphoneNum,setNewPhoneNum]=useState(phoneNum)
 const [newEmail,setNewEmail]=useState(userEmail)
 const [newAddress,setNewAddress]=useState(userAddress)
+const handleUpdateContact = async () => {
+    try {
+      // Simulate an API request with a delay (replace this with your real API call)
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      // The API request is successful, and the contact details are updated
+      // Now you can navigate back to the ContactDetails screen
+      navigation.navigate("Contact Details", {
+        phoneNum: newphoneNum,
+        userEmail: newEmail,
+        userAddress: newAddress,
+      });
+    } catch (error) {
+      // Handle any errors that may occur during the update process
+      console.log('Error updating contact:', error.message);
+      // Optionally, you can display an error message to the user
+    }
+  };
 
   return (
     <View style={{width:"100%",flex:1,justifyContent:"flex-end",alignItems:"center",padding:16}}>
@@ -90,7 +107,7 @@ const [newAddress,setNewAddress]=useState(userAddress)
         editable
         /> 
     </View>
-    <TouchableWithoutFeedback onPress={()=>navigation.navigate("Contact Details",{phoneNum:newphoneNum,userEmail:newEmail,userAddress:newAddress})}>
+    <TouchableWithoutFeedback onPress={handleUpdateContact}>
                 <View style={styles.cta}>
                     <Text style={{ color: "#fff", fontSize: 15, fontWeight: "400" }}>UPDATE</Text>
                 </View>
