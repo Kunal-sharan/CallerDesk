@@ -1,7 +1,7 @@
 import  { SvgXml } from 'react-native-svg';
 
 
-export const IconHome=()=>{
+export const IconHome=(focused)=>{
     return <SvgXml xml={`<?xml version="1.0" ?><svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M21 20H1M1 9L5.063 5.75M21 9L12.874 2.5C12.3421 2.07449 11.6812 1.84267 11 1.84267C10.3188 1.84267 9.65793 2.07449 9.126 2.5L8.344 3.125M14.5 3.5V1.5C14.5 1.36739 14.5527 1.24021 14.6464 1.14645C14.7402 1.05268 14.8674 1 15 1H17.5C17.6326 1 17.7598 1.05268 17.8536 1.14645C17.9473 1.24021 18 1.36739 18 1.5V6.5M3 20V7.5M19 7.5V11.5M19 20V15.5" stroke="#9099AE" stroke-width="1.5" stroke-linecap="round"/>
     <path d="M14 20V15C14 13.586 14 12.879 13.56 12.44C13.122 12 12.415 12 11 12C9.586 12 8.879 12 8.44 12.44M8 20V15" stroke="#9099AE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

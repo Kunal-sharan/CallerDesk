@@ -11,17 +11,7 @@ import { HomeM6 } from '../../common/icons/HomeM6'
 
 export const Home = () => {
   return (
-    <View style={{justifyContent:"flex-start",alignItems:"center",padding:16,width:"100%",backgroundColor:"rgba(255, 255, 255, 1)",flex:1}}>
-      <MySearch/>
-      <View>
-      <View style={{marginVertical:4,flexDirection:"row",justifyContent:"flex-start",alignContent:"flex-start",width:"100%"}}>
-        <Text style={{fontSize:25,fontWeight:"400",marginRight:8,textAlign:"left"}}>Hello</Text>
-        <Text style={{fontSize:24,fontWeight:"700",textAlign:"left"}}>Julia</Text>
-      </View>
-      <View>
-        <Text style={{color:"rgba(153, 150, 150, 1)",fontSize:13,fontWeight:"400",paddingBottom:4}}>In publishing and graphic design, Lorem ipsum is</Text>
-      </View>
-      </View>
+    <View style={{justifyContent:"center",alignItems:"center",padding:16,width:"100%",backgroundColor:"white",flex:1}}>
       <View style={{flexDirection:"row"}}>
       <MyCard
         title="Total Call"

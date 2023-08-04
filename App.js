@@ -65,13 +65,13 @@ const HomeTabs = () => {
         tabBarIcon: ({ focused}) => {
 
           if (route.name === 'Home') {
-            return <IconHome color={focused ? colors.primary : "rgba(144, 153, 174, 1)"} />;
+            return <IconHome color={focused ? colors.primary : "red"} />;
           } else if (route.name === 'Chat') {
-            return <IconChat  color={focused ? colors.primary : "rgba(144, 153, 174, 1)"} />;
+            return <IconChat  color={focused ? colors.primary : "red"} />;
           } else if (route.name === 'Calllogs') {
-            return <IconCalllogs  color={focused ? colors.primary : "rgba(144, 153, 174, 1)"} />;
+            return <IconCalllogs  color={focused ? colors.primary : "red"} />;
           } else if (route.name === 'Contact') {
-            return <IconContacts  color={focused ? colors.primary : "rgba(144, 153, 174, 1)"} />;
+            return <IconContacts  color={focused ? colors.primary : "red"} />;
           }
 
           // You can return a default icon or null if needed
