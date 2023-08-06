@@ -1,9 +1,15 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View ,Linking} from 'react-native'
 import React, {  useState} from 'react'
 import { Phone } from '../../common/icons/Contactdetailsicons/phone';
 import { CopyIcon } from '../../common/icons/copyicon';
 import { ContactImgIcon } from '../../common/icons/contactimg';
 import { EditIcon } from '../../common/icons/editicon';
+import { Mycta } from '../../common/components/cta';
+import { HomeM2 } from '../../common/icons/HomeM2';
+import { WAbusinessicon } from '../../common/icons/wa';
+import { Paymenticon } from '../../common/icons/wpayment';
+import { Locationicon } from '../../common/icons/wlocation';
+import { CallHistoryicon } from '../../common/icons/wcallhistory';
 
 const ContactProfile = () => {
     // const [imageSource, setImageSource] = useState(null);
@@ -38,7 +44,7 @@ const ContactProfile = () => {
     // };
   
     return (
-      <View style={{ flex: 0.5, alignItems: 'center', justifyContent: 'center' ,paddingTop:4,marginVertical:8}}>
+      <View style={{ alignItems: 'center', justifyContent: 'flex-start' ,paddingTop:4}}>
 
         {/* {imageSource ? (
           <Image
@@ -59,13 +65,34 @@ const ContactProfile = () => {
   
   
 const ContactsDetails = ({navigation}) => {
-  const [userEmail,setuserEmail]=useState("xyz123@gmail.com")
-  const [userAddress,setuserAddress]=useState("4071 4th Floor,IP Ext 2")
-  const [phoneNum,setphoneNum]=useState("999 333 933 9009")
+  let email="xyz123@gmail.com"
+  let address="4071 4th Floor,IP Ext 2"
+  let number="999 99979 56676"
+  const [userEmail,setuserEmail]=useState(email)
+  const [userAddress,setuserAddress]=useState(address)
+  const [phoneNum,setphoneNum]=useState(number)
+  const makePhoneCall = () => {
+    // Check if the device supports making phone calls
+    if (Platform.OS === 'android') {
+      Linking.openURL(`tel:${phoneNum}`);
+    } else {
+      Linking.openURL(`telprompt:${phoneNum}`);
+    }
+  };
 
   return (
     <View style={{flex:1,width:"100%",backgroundColor:"white",padding:16,justifyContent:"flex-start",alignItems:"center"}}>
+      <View>
       <ContactProfile/>
+      </View>
+      <View style={{flexDirection:"row",width:"100%",paddingHorizontal:4,justifyContent:"center",alignItems:"center"}}>
+        <Mycta title="WA Business" txtcolor="#55A06F" mr={8} icon={WAbusinessicon}/>
+        <Mycta title="Payments" txtcolor="#8A8CFA" mr={16} icon={Paymenticon}/>
+      </View>
+      <View style={{flexDirection:"row",width:"100%",paddingHorizontal:4,justifyContent:"center",alignItems:"center"}}>
+        <Mycta title="Location" txtcolor="#FFC100" mr={24} icon={Locationicon}/>
+        <Mycta title="Call History" txtcolor="#CA82FD" mr={8} icon={CallHistoryicon}/>
+      </View>
       <View style={{width:"100%",marginVertical:8,flexDirection:"row",paddingLeft:12}}>
         <View style={{width:"95%"}}>
         <Text style={{fontSize:10,fontWeight:"600",color:"rgba(101, 101, 101, 1)"}}>CONTACT DETAILS</Text>
@@ -80,7 +107,7 @@ const ContactsDetails = ({navigation}) => {
             <Text style={cntactDetlstyle.caption}>Mobile</Text>
             <Text style={cntactDetlstyle.content}>{phoneNum}</Text>
             </View>
-            <View style={{}}><Phone/></View>
+            <TouchableOpacity onPress={makePhoneCall}><View style={{}}><Phone/></View></TouchableOpacity>
         </View>
         <View style={{flexDirection:"row",width:"100%",marginVertical:4}}>
             <View style={{width:"90%"}}>

@@ -32,6 +32,20 @@ export const Myredcta=({head,desc,icon})=>{
   );
 
 }
+export const Mycta=({icon,title,txtcolor,mr})=>{
+  return(
+    <Card style={styles.mycta}>
+      <View style={{flexDirection:"row"}}>
+      <View style={{marginRight:mr}}>
+        <CustomIcon svgData={icon}/>
+        </View>
+      <View>
+        <Text style={[styles.myctatitle,{color:txtcolor}]} >{title}</Text>
+      </View>
+      </View>
+    </Card>
+  );
+}
 
 const styles = StyleSheet.create({
   captionwhite:{
@@ -87,6 +101,24 @@ const styles = StyleSheet.create({
     fontSize:12,
     fontWeight:"400",
     color:"rgba(250, 246, 246, 1)"
+  },
+  mycta:{
+    margin:4,
+    width:"50%",
+    backgroundColor:"#FFFFFF",
+    justifyContent:"center",
+    alignItems:"center",
+    borderRadius:10,
+    elevation: 5,
+    // Drop shadow for iOS
+    shadowColor: 'rgba(0, 0, 0, 0.5)',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.7,
+    shadowRadius: 5
+  },
+  myctatitle:{
+    fontSize:14,
+    fontWeight:"400",
   }
 
 });
