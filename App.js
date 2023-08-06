@@ -53,43 +53,7 @@ const AppStack = () => {
   )
 };
 
-// const HomeTabs = () => {
-//   return (
-//     <Tab.Navigator
-//     screenOptions={({ route }) => ({
-//       tabBarIcon: ({ focused }) => {
-//         let iconComponent;
-//         let iconColor = focused ? colors.primary : 'red';
 
-//         switch (route.name) {
-//           case 'Home':
-//             iconComponent = <IconHome color={iconColor} />;
-//             break;
-//           case 'Chat':
-//             iconComponent = <IconChat color={iconColor} />;
-//             break;
-//           case 'Calllogs':
-//             iconComponent = <IconCalllogs color={iconColor} />;
-//             break;
-//           case 'Contact':
-//             iconComponent = <IconContacts color={iconColor} />;
-//             break;
-//           default:
-//             // You can return a default icon or null if needed
-//             iconComponent = null;
-//         }
-
-//         return iconComponent;
-//       },
-//     })}
-//   >
-//     <Tab.Screen name="Home" component={Home} />
-//     <Tab.Screen name="Chat" component={Chat} />
-//     <Tab.Screen name="Calllogs" options={{ headerRight: headerRight }} component={Calllogs} />
-//     <Tab.Screen name="Contact" component={Dialpad} />
-//   </Tab.Navigator>
-// );
-// };
 const HomeTabs = () => {
   return (
     <Tab.Navigator
