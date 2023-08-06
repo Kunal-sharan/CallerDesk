@@ -3,7 +3,6 @@ import React,{useState,useEffect} from 'react'
 import { NoMissedCalls } from '../../common/icons/NoMissedCalls'
 import { IconMissedCall } from '../../common/icons/missedIcon';
 import MySearch from '../../common/components/inputs';
-
 const MissedCalls = () => {
        const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true); // Initialize loading state to true
