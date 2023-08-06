@@ -1,22 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react'; // Don't forget to import React
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { Login } from "./screens/login"
 import * as eva from "@eva-design/eva"
 import { ApplicationProvider } from "@ui-kitten/components"
 import { OTPverify } from './screens/OTPverify';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Easing } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './screens/private/HomeTab';
 import { IconChat } from './common/icons/messageicon';
 import { IconCalllogs } from './common/icons/calllogsicon';
-import { IconContacts } from './common/icons/contactsicon';
 import Chat from './screens/private/Chat';
 import Calllogs from './screens/private/Calllogs';
 import Contacts from './screens/private/Contacts';
-import { colors } from './themes/vars';
 import { IconHome } from './common/icons/homeicon';
 import Onboarding from './common/components/Onbording/Onboarding';
 import Dialpad from './screens/private/Dialpad';
@@ -24,12 +20,11 @@ import MissedCalls from './screens/private/MissedCalls';
 import Logs from './screens/private/Logs';
 import AnsweredCalls from './screens/private/AnsweredCalls';
 import AddContactDetails from './screens/private/AddContactDetails';
-import { AddContact } from './AddContact';
 import { IconAddContact } from './common/icons/addcontacticon';
 import { NotificationIcon } from './common/icons/notification';
 import ContactsDetails from './screens/private/ContactsDetails';
 import EditContact from './screens/private/EditContact';
-import ContactsTab from './screens/private/ContactsTab';
+import IconContacts from './common/icons/contactsicon';
 const headerRight=()=>{
   return(
     <View style={{flexDirection:"row",padding:4}}>
@@ -58,20 +53,57 @@ const AppStack = () => {
   )
 };
 
+// const HomeTabs = () => {
+//   return (
+//     <Tab.Navigator
+//     screenOptions={({ route }) => ({
+//       tabBarIcon: ({ focused }) => {
+//         let iconComponent;
+//         let iconColor = focused ? colors.primary : 'red';
+
+//         switch (route.name) {
+//           case 'Home':
+//             iconComponent = <IconHome color={iconColor} />;
+//             break;
+//           case 'Chat':
+//             iconComponent = <IconChat color={iconColor} />;
+//             break;
+//           case 'Calllogs':
+//             iconComponent = <IconCalllogs color={iconColor} />;
+//             break;
+//           case 'Contact':
+//             iconComponent = <IconContacts color={iconColor} />;
+//             break;
+//           default:
+//             // You can return a default icon or null if needed
+//             iconComponent = null;
+//         }
+
+//         return iconComponent;
+//       },
+//     })}
+//   >
+//     <Tab.Screen name="Home" component={Home} />
+//     <Tab.Screen name="Chat" component={Chat} />
+//     <Tab.Screen name="Calllogs" options={{ headerRight: headerRight }} component={Calllogs} />
+//     <Tab.Screen name="Contact" component={Dialpad} />
+//   </Tab.Navigator>
+// );
+// };
 const HomeTabs = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused}) => {
-
           if (route.name === 'Home') {
-            return <IconHome color={focused ? colors.primary : "red"} />;
+            return <IconHome/>;
           } else if (route.name === 'Chat') {
-            return <IconChat  color={focused ? colors.primary : "red"} />;
+            return <IconChat />;
           } else if (route.name === 'Calllogs') {
-            return <IconCalllogs  color={focused ? colors.primary : "red"} />;
-          } else if (route.name === 'Contact') {
-            return <IconContacts  color={focused ? colors.primary : "red"} />;
+            return <IconCalllogs />;
+          }
+           else if (route.name === 'Contact') {
+            return <IconContacts />;
           }
 
           // You can return a default icon or null if needed

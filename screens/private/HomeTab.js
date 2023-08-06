@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View ,SvgXml, TouchableOpacity} from 'react-native'
+import { View} from 'react-native'
 import React from 'react'
-import MySearch from '../../common/components/inputs'
 import MyCard from '../../common/components/layout'
 import { HomeM1 } from '../../common/icons/HomeM1'
 import { HomeM2 } from '../../common/icons/HomeM2'

@@ -3,10 +3,9 @@ import React, { useState } from 'react'
 import { DelIcon } from '../../common/icons/del'
 import { ContactBookIcon } from '../../common/icons/contactbook'
 import { PhonekeyIcon } from '../../common/icons/Phonekey'
-import { useNavigation } from '@react-navigation/native'
-import { IconArrow } from '../../common/icons/iconarrow'
 import { DownArrow } from '../../common/icons/downarrow'
 import { Dialbutton } from '../../common/icons/dial'
+
 // const dialpad=[1,2,3,4,5,6,7,8,9,"*",0,"#"]
 // const spacing=30
 // const hSpacing=55
@@ -161,6 +160,7 @@ const Dialpad = () => {
       </TouchableOpacity>
 
       <Modal animationType="slide" transparent={true} visible={isModalVisible}>
+      
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <View style={{ justifyContent: 'flex-end', alignItems: 'center', flex: 1, backgroundColor: 'white' }}>

@@ -2,42 +2,38 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import CustomIcon from './CustomIcon'; // Import the CustomIcon component
 import {Card} from "@ui-kitten/components"
-import { useNavigation } from '@react-navigation/native';
-import { color } from 'react-native-reanimated';
 
-const MyCard = ({ title, icon,screen}) => {
-  const navigation=useNavigation()
+
+export const Mywhitecta=({title,desc,icon})=>{
   return (
-    <Card style={styles.card} onPress={()=>{navigation.navigate(screen)}}>
-      <View style={{ justifyContent:"center",alignItems: "center",width:"100%" }}>
-        <CustomIcon svgData={icon} />
-        <Text style={{padding:8,fontSize:11,fontWeight:"400",textAlign:"center"}}>{title}</Text>
+    <Card>
+      <View style={styles.ctawhite}>
+        <View>
+        <Text style={styles.captionwhite}>{title}</Text>
+        <Text style={styles.descwhite}>{desc}</Text>
+        </View>
+        <CustomIcon svgData={icon}/>
       </View>
-      </Card>
+    </Card>
   );
-};
-export default MyCard
 
+};
+export const Myredcta=({head,desc,icon})=>{
+  return (
+    <Card>
+      <View style={styles.ctared}>
+        <View>
+        <Text style={styles.captionred}>{head}</Text>
+        <Text style={styles.descred}>{desc}</Text>
+        </View>
+        <CustomIcon svgData={icon}/>
+      </View>
+    </Card>
+  );
+
+}
 
 const styles = StyleSheet.create({
-  card: {
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 147,
-    height: 125,
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "rgba(241, 50, 96, 0.16)",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 4,
-    margin:8,
-    elevation: 8,
-    // Drop shadow for iOS
-    shadowColor: 'rgba(241, 50, 96, 0.16)',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-  },
   captionwhite:{
     fontSize:17,
     fontWeight:"400",
