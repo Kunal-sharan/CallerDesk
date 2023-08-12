@@ -25,6 +25,7 @@ import { NotificationIcon } from './common/icons/notification';
 import ContactsDetails from './screens/private/ContactsDetails';
 import EditContact from './screens/private/EditContact';
 import IconContacts from './common/icons/contactsicon';
+import Whatsapptemplate from './screens/private/Whatsapptemplate';
 const headerRight=()=>{
   return(
     <View style={{flexDirection:"row",padding:4}}>
@@ -89,7 +90,7 @@ const Tab=createBottomTabNavigator()
 export default function App() {
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
-      {/* <Dialpad/> */}
+      {/* <Whatsapptemplate/> */}
       <NavigationContainer>
         <AppStack />  
       </NavigationContainer>

@@ -4,44 +4,41 @@ import CustomIcon from './CustomIcon'; // Import the CustomIcon component
 import {Card} from "@ui-kitten/components"
 
 
-export const Mywhitecta=({title,desc,icon})=>{
+export const Mywhitecta = ({ title, desc, icon }) => {
   return (
-    <Card>
-      <View style={styles.ctawhite}>
-        <View>
+    <Card style={styles.ctawhite}>
+    <View style={styles.ctaRow}>
+    <View style={{paddingTop:8,marginLeft:20}}><CustomIcon svgData={icon} /></View>
+      <View style={styles.textContainer}>
         <Text style={styles.captionwhite}>{title}</Text>
         <Text style={styles.descwhite}>{desc}</Text>
-        </View>
-        <CustomIcon svgData={icon}/>
       </View>
-    </Card>
+    </View>
+  </Card>
   );
-
 };
-export const Myredcta=({head,desc,icon})=>{
+
+export const Myredcta = ({ head, desc, icon }) => {
   return (
-    <Card>
-      <View style={styles.ctared}>
-        <View>
-        <Text style={styles.captionred}>{head}</Text>
-        <Text style={styles.descred}>{desc}</Text>
+    <Card style={styles.ctared}>
+      <View style={styles.ctaRow}>
+        <View style={{paddingTop:8}}><CustomIcon svgData={icon} /></View>
+        <View style={styles.textContainer}>
+          <Text style={styles.captionred}>{head}</Text>
+          <Text style={styles.descred}>{desc}</Text>
         </View>
-        <CustomIcon svgData={icon}/>
       </View>
     </Card>
   );
-
 }
 export const Mycta=({icon,title,txtcolor,mr})=>{
   return(
     <Card style={styles.mycta}>
-      <View style={{flexDirection:"row"}}>
       <View style={{marginRight:mr}}>
         <CustomIcon svgData={icon}/>
         </View>
       <View>
         <Text style={[styles.myctatitle,{color:txtcolor}]} >{title}</Text>
-      </View>
       </View>
     </Card>
   );
@@ -58,22 +55,23 @@ const styles = StyleSheet.create({
     fontWeight:"400",
     color:"rgba(255, 255, 255, 1)"
   },
-  ctawhite:{
+  ctawhite: {
     backgroundColor: "rgba(255, 255, 255, 1)",
-    width:"100%",
+    width: "100%",
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "rgba(237, 221, 221, 1)",
     justifyContent: "center",
     alignItems: "center",
-    padding: 4,
-    margin:8,
+    padding: 12, // Adjust padding as needed
+    margin: 8,
     elevation: 5,
     // Drop shadow for iOS
     shadowColor: 'rgba(0, 0, 0, 0.2)',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.7,
     shadowRadius: 5,
+    flexDirection: "row", // Align items in a row
   },
   ctared:{
     backgroundColor: "rgba(241, 50, 96, 1)",
@@ -83,14 +81,15 @@ const styles = StyleSheet.create({
     borderColor: "rgba(237, 221, 221, 1)",
     justifyContent: "center",
     alignItems: "center",
-    padding: 4,
-    margin:8,
+    paddingVertical: 8,
+    margin:4,
     elevation: 5,
     // Drop shadow for iOS
     shadowColor: 'rgba(0, 0, 0, 0.2)',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.7,
     shadowRadius: 5,
+    flexDirection:"row"
   },
   descwhite:{
     fontSize:12,
@@ -119,6 +118,14 @@ const styles = StyleSheet.create({
   myctatitle:{
     fontSize:14,
     fontWeight:"400",
+  },
+  ctaRow: {
+    flexDirection: 'row-reverse', // Align items in a row
+    alignItems: 'center', // Center items vertically
+     // Adjust padding as needed
+  },
+  textContainer: {
+    marginRight: 16, // Space between icon and text
   }
 
 });
