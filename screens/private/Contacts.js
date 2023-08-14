@@ -13,7 +13,10 @@ const Contacts = () => {
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((json) => setData(json))
+      .then((json) => {
+        setData(json);
+        setImageUrl(json.imageUrl); // Assuming imageUrl is the property containing the image URL
+      })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }, []);
@@ -34,7 +37,10 @@ const Contacts = () => {
                 <View
                   style={styles.contactsImg}
                 >
-                  <Text>K</Text>
+                  <Image
+                  source={{ uri: imageUrl }}
+                  style={styles.contactsImg}
+                />
                 </View>
                 <View style={{paddingHorizontal:16}}>
                 <Text >Kunal Sharan</Text>
@@ -58,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   contactsImg:{
-    backgroundColor: "rgba(86, 242, 124, 1)",
+   resizeMode:"contain",
     color:"white",
     width: 35,
     height: 35,

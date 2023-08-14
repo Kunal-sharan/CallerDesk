@@ -3,19 +3,23 @@ import React,{useState,useEffect} from 'react'
 import { NoMissedCalls } from '../../common/icons/NoMissedCalls'
 import { IconMissedCall } from '../../common/icons/missedIcon';
 import MySearch from '../../common/components/inputs';
+
 const MissedCalls = () => {
        const [data, setData] = useState([]);
+       const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(true); // Initialize loading state to true
   const url = "";
-
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((json) => setData(json))
+      .then((json) => {
+        setData(json);
+        setImageUrl(json.imageUrl); // Assuming imageUrl is the property containing the image URL
+      })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }, []);
-
+  
   return (
     <ScrollView style={{ width: "100%" }}>
       <View style={{ width: "100%" ,padding:16,backgroundColor:"white"}}>
@@ -32,7 +36,10 @@ const MissedCalls = () => {
                 <View
                   style={styles.contactsImg}
                 >
-                  <Text>K</Text>
+                 <Image
+                  source={{ uri: imageUrl }}
+                  style={styles.contactsImg}
+                />
                 </View>
                 <View style={{paddingHorizontal:16}}>
                 <Text >Kunal Sharan</Text>
@@ -60,7 +67,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   contactsImg:{
-    backgroundColor: "white",
+    resizeMode:"contain",
     color:"rgba(96, 82, 176, 1)",
     width: 40,
     height: 40,
